@@ -1,0 +1,29 @@
+{
+  "name": "app-tracker",
+  "version": "1.0.0",
+  "description": "A native node module to pull desktop windows from macOS/windows",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "node-gyp rebuild",
+    "clean": "node-gyp clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gozowy/app-tracker.git"
+  },
+  "author": "Lindsay Snider <lindsay.snider@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/gozowy/app-tracker/issues"
+  },
+  "homepage": "https://github.com/gozowy/app-tracker/",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^3.0.2",
+    "node-mac-permissions": "^2.2.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^7.1.2"
+  }
+}

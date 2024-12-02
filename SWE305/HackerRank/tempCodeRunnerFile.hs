@@ -1,0 +1,1 @@
+powSum 0 backwards

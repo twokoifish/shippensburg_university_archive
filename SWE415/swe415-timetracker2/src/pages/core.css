@@ -1,0 +1,69 @@
+@import "./assets/fonts/fonts.css";
+
+@media (prefers-color-scheme: light) {
+
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: white;
+    margin: 0;
+}
+
+h1 h2 h3 h4 h5 {
+    font-family: 'Poppins', sans-serif;
+
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Overrides for Dark Mode. */
+    body {
+        color: white;
+        background: black;
+    }
+}
+
+.nav-header {
+    float: left;
+    margin-top: -30px;
+    align-content: center;
+    width: 100%;
+}
+
+.nav-icon {
+    margin: 2px 5px 5px 10px;
+    font-weight: bold;
+    display: inline-block;
+    align-content: center;
+    color: black;
+}
+
+.nav-title {
+    margin-top: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    align-content: center;
+    padding: 20px 10px;
+}
+
+.nav-items {
+    margin-top: 45px;
+    list-style-type: none;
+    display: inline;
+    float: right;
+    color: black;
+    align-content: center;
+    padding-right: 10px;
+}
+
+.item {
+    color: black;
+    padding-left: 20px;
+    font-size: 20px;
+    vertical-align: middle;
+    display: inline;
+}
+
+.icon {
+    color: black;
+}

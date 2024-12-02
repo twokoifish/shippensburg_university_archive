@@ -1,0 +1,69 @@
+======---q1---=======
+Tue Mar 5 14:21:29 EST 2019
+Checking format violation by a script...
+Compiling q1.c to q1
+Comparing using input q1.input.1 and answer q1.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q1.input.2 and answer q1.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q1.input.3 and answer q1.ans.3
+Diff output (empty line means correct):
+
+======---q2---=======
+Tue Mar 5 14:21:30 EST 2019
+Checking format violation by a script...
+Compiling q2.c to q2
+Comparing using input q2.input.1 and answer q2.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q2.input.2 and answer q2.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q2.input.3 and answer q2.ans.3
+Diff output (empty line means correct):
+
+======---q5---=======
+Tue Mar 5 14:21:30 EST 2019
+Checking format violation by a script...
+Compiling q5.c to q5
+Comparing using input q5.input.1 and answer q5.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q5.input.2 and answer q5.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q5.input.3 and answer q5.ans.3
+Diff output (empty line means correct):
+
+Comparing using input q5.input.4 and answer q5.ans.4
+Diff output (empty line means correct):
+
+Comparing using input q5.input.5 and answer q5.ans.5
+Diff output (empty line means correct):
+
+======---q10---=======
+Tue Mar 5 14:21:30 EST 2019
+Checking format violation by a script...
+Compiling q10.c to q10
+Comparing using input q10.input.1 and answer q10.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q10.input.2 and answer q10.ans.2
+Diff output (empty line means correct):
+
+======---q14---=======
+Tue Mar 5 14:21:31 EST 2019
+Checking format violation by a script...
+Compiling q14.c to q14
+Comparing using input q14.input.1 and answer q14.ans.1
+Diff output (empty line means correct):
+
+======---q15---=======
+Tue Mar 5 14:21:31 EST 2019
+Checking format violation by a script...
+Compiling q15.c to q15
+Comparing using input q15.input.1 and answer q15.ans.1
+Diff output (empty line means correct):
+

@@ -1,0 +1,123 @@
+======---q1---=======
+Tue Apr 2 12:57:07 EDT 2019
+Checking format violation by a script...
+File q1.c, line 239: [PUT SPACE AROUND OPERATORS]:
+           "Sort by: 1=Name, 2=year\n");
+Compiling q1.c to q1
+Comparing using input q1.input.1 and answer q1.ans.1
+Diff output (empty line means correct):
+
+3,23c3,23
+< Enter choice: 1972    Agnes   FL,NC
+< 1983  Alicia  MS
+< 1992  Andrew  FL
+< 1969  Camile  TX
+< 2004  Charley SC,NC
+< 2005  Dennis  FL,LA
+< 1960  Donna   FL,AL
+< 1999  Floyd   NC
+< 2004  Frances NC,VA
+< 1989  Hugo    FL,SC,NC
+< 2009  Ida     FL
+< 2008  Ike     AL
+< 2011  Irene   FL
+< 2003  Isabel  FL,AL
+< 2012  Issac   FL,LA,MS
+< 2004  Ivan    TX,LA
+< 2004  Jeanne  FL
+< 2005  Katrina TX
+< 1995  Opal    MS
+< 2005  Rita    NC,NJ,MA,VT
+< 2005  Wilma   LA
+---
+> Enter choice: 1972	Agnes	FL,NC	
+> 1983	Alicia	MS	
+> 1992	Andrew	FL	
+> 1969	Camile	TX	
+> 2004	Charley	SC,NC	
+> 2005	Dennis	FL,LA	
+> 1960	Donna	FL,AL	
+> 1999	Floyd	NC	
+> 2004	Frances	NC,VA	
+> 1989	Hugo	FL,SC,NC	
+> 2009	Ida	FL	
+> 2008	Ike	AL	
+> 2011	Irene	FL	
+> 2003	Isabel	FL,AL	
+> 2012	Issac	FL,LA,MS	
+> 2004	Ivan	TX,LA	
+> 2004	Jeanne	FL	
+> 2005	Katrina	TX	
+> 1995	Opal	MS	
+> 2005	Rita	NC,NJ,MA,VT	
+> 2005	Wilma	LA	
+Comparing using input q1.input.2 and answer q1.ans.2
+Diff output (empty line means correct):
+
+3,23c3,23
+< Enter choice: 1960    Donna   FL,AL
+< 1969  Camile  TX
+< 1972  Agnes   FL,NC
+< 1983  Alicia  MS
+< 1989  Hugo    FL,SC,NC
+< 1992  Andrew  FL
+< 1995  Opal    MS
+< 1999  Floyd   NC
+< 2003  Isabel  FL,AL
+< 2004  Ivan    TX,LA
+< 2004  Jeanne  FL
+< 2004  Frances NC,VA
+< 2004  Charley SC,NC
+< 2005  Rita    NC,NJ,MA,VT
+< 2005  Wilma   LA
+< 2005  Katrina TX
+< 2005  Dennis  FL,LA
+< 2008  Ike     AL
+< 2009  Ida     FL
+< 2011  Irene   FL
+< 2012  Issac   FL,LA,MS
+---
+> Enter choice: 1960	Donna	FL,AL	
+> 1969	Camile	TX	
+> 1972	Agnes	FL,NC	
+> 1983	Alicia	MS	
+> 1989	Hugo	FL,SC,NC	
+> 1992	Andrew	FL	
+> 1995	Opal	MS	
+> 1999	Floyd	NC	
+> 2003	Isabel	FL,AL	
+> 2004	Ivan	TX,LA	
+> 2004	Jeanne	FL	
+> 2004	Frances	NC,VA	
+> 2004	Charley	SC,NC	
+> 2005	Rita	NC,NJ,MA,VT	
+> 2005	Wilma	LA	
+> 2005	Katrina	TX	
+> 2005	Dennis	FL,LA	
+> 2008	Ike	AL	
+> 2009	Ida	FL	
+> 2011	Irene	FL	
+> 2012	Issac	FL,LA,MS	
+======---q2---=======
+Tue Apr 2 12:57:07 EDT 2019
+Checking format violation by a script...
+File q2.c, line 72: [PUT SPACE AROUND OPERATORS]:
+      printf("Resistance value: %.1f kilo-ohms\n", calc_resistor(bands));
+Compiling q2.c to q2
+Comparing using input q2.input.1 and answer q2.ans.1
+Diff output (empty line means correct):
+
+======---q7---=======
+Tue Apr 2 12:57:07 EDT 2019
+Checking format violation by a script...
+Compiling q7.c to q7
+Comparing using input q7.input.1 and answer q7.ans.1
+Diff output (empty line means correct):
+
+======---q8---=======
+Tue Apr 2 12:57:07 EDT 2019
+Checking format violation by a script...
+Compiling q8.c to q8
+Comparing using input q8.input.1 and answer q8.ans.1
+Diff output (empty line means correct):
+

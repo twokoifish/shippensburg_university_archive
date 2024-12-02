@@ -1,0 +1,1 @@
+const DatabaseManager = require("../../../dal/database/manager/DatabaseManager")

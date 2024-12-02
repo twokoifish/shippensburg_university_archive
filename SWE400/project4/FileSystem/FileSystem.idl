@@ -1,0 +1,26 @@
+module FileSystemApp 
+{
+
+  typedef sequence<octet> File;
+
+  interface ClientToServer
+  {
+    string readLocalFile(in string fileName);
+    boolean writeLocalFile(in string fileName, in string message);
+    oneway void shutdown();
+  };
+
+  interface ServerToServer
+  {
+    string fetchRemoteFile(in string fileName);
+    string readRemoteFile(in string fileName);
+    string lockAndWrite(in string fileName);
+    boolean fileExists(in string title);
+    boolean checkLock(in string fileName);
+    string sayOnline();
+    oneway void pingServers();
+    oneway void killAllORB();
+    oneway void shutdown();
+  };
+
+};

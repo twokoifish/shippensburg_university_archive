@@ -1,0 +1,100 @@
+======---q2---=======
+Sun Feb 24 20:11:41 EST 2019
+Checking format violation by a script...
+Compiling q2.c to q2
+Comparing using input q2.input.1 and answer q2.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q2.input.2 and answer q2.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q2.input.3 and answer q2.ans.3
+Diff output (empty line means correct):
+
+======---q3---=======
+Sun Feb 24 20:11:41 EST 2019
+Checking format violation by a script...
+Compiling q3.c to q3
+Comparing using input q3.input.1 and answer q3.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q3.input.2 and answer q3.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q3.input.3 and answer q3.ans.3
+Diff output (empty line means correct):
+
+Comparing using input q3.input.4 and answer q3.ans.4
+Diff output (empty line means correct):
+
+======---q4---=======
+Sun Feb 24 20:11:41 EST 2019
+Checking format violation by a script...
+Compiling q4.c to q4
+Comparing using input q4.input.1 and answer q4.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q4.input.2 and answer q4.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q4.input.3 and answer q4.ans.3
+Diff output (empty line means correct):
+
+Comparing using input q4.input.4 and answer q4.ans.4
+Diff output (empty line means correct):
+
+======---q5---=======
+Sun Feb 24 20:11:41 EST 2019
+Checking format violation by a script...
+Compiling q5.c to q5
+Comparing using input q5.input.1 and answer q5.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q5.input.2 and answer q5.ans.2
+Diff output (empty line means correct):
+
+======---q6---=======
+Sun Feb 24 20:11:41 EST 2019
+Checking format violation by a script...
+Compiling q6.c to q6
+Comparing using input q6.input.1 and answer q6.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q6.input.2 and answer q6.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q6.input.3 and answer q6.ans.3
+Diff output (empty line means correct):
+
+Comparing using input q6.input.4 and answer q6.ans.4
+Diff output (empty line means correct):
+
+======---q8---=======
+Sun Feb 24 20:11:42 EST 2019
+Checking format violation by a script...
+Compiling q8.c to q8
+Comparing using input q8.input.1 and answer q8.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q8.input.2 and answer q8.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q8.input.3 and answer q8.ans.3
+Diff output (empty line means correct):
+
+======---q11---=======
+Sun Feb 24 20:11:42 EST 2019
+Checking format violation by a script...
+Compiling q11.c to q11
+Comparing using input q11.input.1 and answer q11.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q11.input.2 and answer q11.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q11.input.3 and answer q11.ans.3
+Diff output (empty line means correct):
+
+Comparing using input q11.input.4 and answer q11.ans.4
+Diff output (empty line means correct):
+

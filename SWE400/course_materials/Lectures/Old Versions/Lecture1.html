@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Lecture 1</title>
+
+</head><body>
+<h1 style="text-align: center;">Large scale architectures</h1>
+<br>
+<div style="text-align: center;"><big><big>Now
+stuff gets really big or</big></big><br>
+<big><big>Design patterns on steroids</big></big><br>
+</div>
+<h2>What is a design pattern?</h2>
+Remember the definition . . .<br>
+This semester is the study of design pattens for really big systems<br>
+<h2>Enterprise applications</h2>
+<ul>
+<li>Persistent data - for years</li>
+<li>Lots of data</li>
+<li>Many concurrent users</li>
+<li>Lots of user interface screens</li>
+<li>Integrate with other systems</li>
+<li>Examples</li>
+</ul>
+
+<h2>Life within a business</h2>
+Conceptual dissonance - between business processes and the software<br>
+Business processes differ across the Organization and over time<br>
+Business logic is often not logical and is out of our control<br>
+<h2>Kind of enterprise applications</h2>
+B2C<br>
+B2B<br>
+Single business information systems<br>
+Are enterprise applications limited to &#8220;business&#8221; systems?<br>
+<h2>Does performance matter?</h2>
+Sometimes<br>
+<br>
+Some strategies can help, but nothing is real until it is measured on
+your system<br>
+Upgrading anything can change performance (up or down) and old
+optimizations may become degradations<br>
+<h3>Performance definitions</h3>
+<ul>
+<li>Response time - the time it takes the system to process a
+request</li>
+<li>Responsiveness - the time it takes the system to respond to
+a request</li>
+<li>Latency - the minimum time required to get a response even
+if no work is required</li>
+<li>Throughput - the amount of work that can be done in a given
+amount of time</li>
+<li>Load - how much stress the system is under</li>
+<li>Load sensitivity - how response time varies with load</li>
+<li>Efficiency - performance divided by resources</li>
+<li>Capacity - maximum effective throughput or load</li>
+</ul>
+<h2>Scalability</h2>
+<h3>How adding resources affects performance</h3>
+Vertical scalability - adding power to a single server<br>
+Horizontal scalability - adding more servers<br>
+<br>
+<h2>How will this book describe a pattern?</h2>
+<ul>
+<li>Name - so we can build a common vocabulary</li>
+<li>Intent - summary statement</li>
+<li>Sketch - an example diagram (usually UML)</li>
+<li>Motivating Problem for the pattern</li>
+<li>How it Works</li>
+<li>When to Use It</li>
+<li>Further Reading</li>
+<li>Examples (READ THESE!!!!)</li>
+</ul>
+<br>
+<br>
+<h2>How Is This Different From SWE200 Design Patterns?</h2>
+<ul>
+<li>Patterns are more complex</li>
+<li>Selection of patterns depends on physical architecture of
+the system</li>
+<li>Selection of a pattern in one portion of the system affects
+the choice of patterns elsewhere</li>
+<li>pattern choices are interconnected</li>
+<li>One pattern often includes other patterns</li>
+</ul>
+<h3>Example of Interconnections</h3>
+web.cs.ship.edu/~merlin/lsa<br>
+username: lsa<br>
+password: merlin<br>
+<br>
+<ul>
+<li>Each of his narratives has a page</li>
+<li>Diagram of related patterns</li>
+<ul>
+<li>red: know it WELL</li>
+<li>blue: know its intent</li>
+</ul>
+<li>Can search for a pattern to see all of the places it is
+referenced</li>
+</ul><h1>Layering&nbsp;&nbsp;&nbsp; </h1>The largest chunks of the system<br><br><h2>Layered Architectures</h2><ul><li>Like a layered cake</li><li>Each layer rests on a lower layer and uses services provided by that lower layer</li><li>Lower layers are unaware of the layers above them</li><li>Each layer can only see the layer immediately below it (so the layers below that are hidden from it)</li></ul><h3>Benefits of Layering</h3><ul><li>You can understand each layer in isolation</li><li>You can make substitutions for layers without changing anything else in the system</li><li>You minimize dependencies between layers</li><li>Layers make good places for standardization (which makes people be able to develop competing solutions)</li><li>One lower layer can support a wide variety of higher-level solutions</li></ul><h3>Downsides to Layering</h3><ul><li>While layers encapsulate some things well, some changes will ripple down the system</li><li>Extra layers can affect performance</li></ul><h2>Enterprise Systems have Three&nbsp; Main Layers</h2>Classic layers:<br><img style="width: 193px; height: 161px;" alt="Classic Layers: Presentation, Model, and Data Source" src="1-1ClassicLayers.PNG"><br><br>Sometimes the Presentation layer is given read only access to the data source:<br><img style="width: 187px; height: 153px;" alt="Layers with read only access to the data source" src="1-2ReadOnlyLayers.PNG"><br><h3>Presentation Layer</h3><ul><li>Handles interactions between the user and the software</li><li>aka: User Interface</li><li>Rich client - rich UI not in a browser</li><li>Primary Responsibilities:</li><li>Display information to the user</li><li>Convert request from the user into actions upon the Domain<span style="font-weight: bold;"></span></li></ul><span style="font-weight: bold;"></span><h4>Kinds of Presentaion</h4>One system can have multiple presentation layers<br><ul><li>Rich client</li><li>Web interface</li><li>Command line controller</li><li>Programmatic controller (no human user at all)</li></ul><h3>Domain Logic Layer</h3><ul><li>aka: Business Logic</li><li>calculations, </li><li>validation of data from presentation,</li><li>system behavior</li></ul><h3>Data Source</h3>Communication with other systems that carry out tasks for the application<br><ul><li>transaction monitors</li><li>other applications</li><li>messaging systems</li><li>persistent data</li></ul><br><h2>Alternative View of System</h2>Everything outside of the system is an interface <br><img style="width: 358px; height: 239px;" alt="Hexagonal Architecture" src="1-3Hexagonal.gif"><br>Hexagonal Architecture*<br><br>The
+interface presented by the Domain Logic layer can be used by any
+outside entity with the construction of an appropriate adapter.<br><br>*Alistar
+Cockburn, Web page titled, &#8220;The Pattern: Ports and Adapters (&#8216;&#8217;Object
+Structural&#8217;&#8217;)&#8220;, http://alistair.cockburn.us/Hexagonal+architecture,
+accesses 7/15/2014.<br><h3>Symmetry</h3><ul><li>Thinking of the system using Hexagonal Architecture has a nice symmetry- all things outside the system are equivalent</li><li>However,
+the user interface that you provide seems different than an interface
+to another system (a service you provide to something else)</li><li>This
+asymmetry is even more clear when you think about the data source - it
+is essentially a system that is providing a service to you, so you
+would be one of the things requiring an adapter in its hexagonal
+architecture.&nbsp; </li></ul><h2>Layers in Code</h2><ul><li>Very simple:&nbsp; one procedure - but keep the three layers as separate subroutines</li><li>More complex: each layer is a class</li><li>Even more complex:&nbsp; each layer is a package (or two or three!)</li></ul><br><h3>Layering Rules</h3><ul><li>Domain Layer and Data Source should never depend on Presentation</li><ul><li>That supports having multiple presentations without changing the lower layers</li></ul><li>What is Domain Logic as opposed to other types of logic?</li><ul><li>Doesn&#8217;t change if you change the presentation layer</li></ul><ul><li>Doesn&#8217;t change if you change how the data is sourced (XML vs. DB)</li></ul></ul><h2>Where do the Layers Run?</h2><h4>Choices</h4><ul><li>Server</li><li>Desktop</li><li>Thin client or browser</li><li>Phone</li></ul><h4>Things to weigh</h4><ul><li>Responsiveness</li><li>Server Roundtrips</li><li>Disconnected Operation</li><li>Sharing/Synchronizing of Information</li></ul><h3>Placement by Layer</h3><h4>Data Source</h4><ul><li>Almost always on a server (remember: enterprise systems)</li><li>When disconnected, can substitute a temporary local data source</li></ul><h4>Presentation</h4><ul><li>Driven by the type of UI you want</li><li>Rich client on the client</li><li>Web interface on the server</li></ul><h4>Domain Logic</h4><ul><li>Either on the client or the server</li><li>Splitting it between the two is complicated</li></ul><h2>Complexity Boosters</h2>Want to avoid<br><ul><li>distribution</li><li>explicit multi-threading</li><li>paradigm chasms (OO vs. RDMS vs. scripting)</li><li>multiplatform development</li><li>extreme performance requirements</li></ul>because each comes at a high cost to the complexity of the system and therefore development and maintenance times<br>
+</body></html>

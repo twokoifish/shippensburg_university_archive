@@ -1,0 +1,22 @@
+{
+  "name": "desktop_app_time_tracker",
+  "productName": "Time Tracker",
+  "version": "0.0.2",
+  "description": "An electron application designed to track app use time on a computer.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.engr.ship.edu/jk7045/desktop_app_time_tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "config": {},
+  "devDependencies": {
+    "electron": "^12.0.1",
+    "electron-active-window": "^0.0.5"
+  }
+}

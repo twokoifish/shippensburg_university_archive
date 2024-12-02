@@ -1,0 +1,1 @@
+printf("%d -> ", q.head -> number);

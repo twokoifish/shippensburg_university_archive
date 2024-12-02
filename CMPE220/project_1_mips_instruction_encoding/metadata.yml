@@ -1,0 +1,14 @@
+---
+:id: 22758762
+:submitters:
+- :name: Joshua Jackson
+  :email: jj7253@ship.edu
+- :name: Andrew Januszko
+  :email: aj8025@cs.ship.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2019-10-21 15:29:14.699264000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2019-10-21 08:29:14.699264000 Z
+:status: processed
+:score: 85.0

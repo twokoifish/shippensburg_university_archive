@@ -1,0 +1,37 @@
+======---q2---=======
+Thu Mar 10 12:08:18 EST 2022
+Checking format violation by a script...
+Compiling q2.c to q2
+Comparing using input q2.input.1 and answer q2.ans.1
+Diff output (empty line means correct):
+
+======---q3---=======
+Thu Mar 10 12:08:20 EST 2022
+Checking format violation by a script...
+Compiling q3.c to q3
+Comparing using input q3.input.1 and answer q3.ans.1
+Diff output (empty line means correct):
+
+======---q5---=======
+Thu Mar 10 12:08:21 EST 2022
+Checking format violation by a script...
+Compiling q5.c to q5
+Comparing using input q5.input.1 and answer q5.ans.1
+Diff output (empty line means correct):
+
+======---q11---=======
+Thu Mar 10 12:08:21 EST 2022
+Checking format violation by a script...
+Compiling q11.c to q11
+Comparing using input q11.input.1 and answer q11.ans.1
+Diff output (empty line means correct):
+
+======---q14---=======
+Thu Mar 10 12:08:21 EST 2022
+Checking format violation by a script...
+File q14.c, line 22: [PUT SPACE AFTER COMMA]:
+  printf("Enter the degree [1,8]: ");
+Compiling q14.c to q14
+Comparing using input q14.input.1 and answer q14.ans.1
+Diff output (empty line means correct):
+

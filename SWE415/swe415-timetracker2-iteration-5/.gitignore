@@ -1,0 +1,12 @@
+.idea
+*.txt
+/out/
+/node_modules/
+.DS_Store
+*.db
+/build/
+*.*.icloud
+session.js
+./package-lock.json
+package-lock.json
+/custom_node_module/app-tracker/bin/darwin-x64-87/app-tracker.node

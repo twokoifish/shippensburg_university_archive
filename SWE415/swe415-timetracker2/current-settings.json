@@ -1,0 +1,12 @@
+[
+  {
+    "name": "general - Discord",
+    "class": "Discord.exe",
+    "isBlacklisted": false
+  },
+  {
+    "name": "Time Tracker",
+    "class": "electron.exe",
+    "isBlacklisted": true
+  }
+]

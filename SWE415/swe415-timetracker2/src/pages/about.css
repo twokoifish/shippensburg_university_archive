@@ -1,0 +1,10 @@
+@import "./core.css";
+
+.text {
+    padding-left: 10px;
+    word-wrap: normal;
+}
+
+.header {
+    font-family: Poppins, serif;
+}

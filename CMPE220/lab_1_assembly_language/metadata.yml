@@ -1,0 +1,14 @@
+---
+:id: 20289518
+:submitters:
+- :name: Andrew Januszko
+  :email: aj8025@cs.ship.edu
+- :name: Isabella Boone
+  :email: ib2573@cs.ship.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2019-09-16 20:26:38.299293000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2019-09-16 13:26:38.299293000 Z
+:status: processed
+:score: 50.0

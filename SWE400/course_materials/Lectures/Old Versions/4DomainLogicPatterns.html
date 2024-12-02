@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Domain Logic Patterns</title></head><body><h1>Domain Logic Patterns</h1>How do we structure domain logic and where do we put it?<br><h2>Domain Logic</h2>Why do we separate Domain Logic?<br><ul><li>Business rules change rapidly</li><li>Business rules can be very complex</li><li>Business rules require significant testing</li></ul><h2>Domain Logic Patterns</h2><img style="width: 640px; height: 270px;" alt="" src="Domain%20Logic.jpg"><br><br><h2>Background Pattern Summaries</h2>Gateway (466):&nbsp; An object that encapsulates access to an external system or resource<br>Row
+Data Gateway (152):&nbsp; An object that acts as a Gateway (466) to a
+single record in a data source.&nbsp; There is one instance per row.<br>Table
+Data Gateway (144):&nbsp; A single instance that acts as a Gateway
+(466) to a database table.&nbsp; Once instance handles all the rows in
+the table.<br>Record Set (508):&nbsp; An in-memory representation of tabular data<br>Data
+Mapper (165):&nbsp; A layer of Mappers (473) that moves data between
+objects and a database while keeping them independent of each other and
+the mapper itself.<br>Active Record (160):&nbsp; An object that wraps a
+row in a database table or view, encapsulates the database access, and
+adds domain logic on that data.<br><br><h2>Transaction Scripts (110)</h2>Organizes business logic by procedures where each procedure handles a single request from the presentation.<br><br>Each
+interaction with the system is essentially a transaction with its own
+transaction script encoding the logic of that interaction<br><br>Each transaction is individually coded, but they might share routines for common functionality<br><br>Where do you put them?<br><ul><li>server page</li><li>cgi script</li><li>distributed session object</li></ul><br>Each should be at least a distinct subroutine.&nbsp; Could be<br><ul><li>separate classes (separate from presentation and data source)</li><li>one class for each subject grouping related scripts</li><li>one class for each script - Command Pattern</li></ul>When to use it:<br><ul><li>great when there is a small amount of business logic</li><li>as
+logic gets more complicated, shared functionality can lead to
+complexity or duplicated code which may need to be refactored into a
+Domain Model (116)</li></ul><h3>Advantages:</h3><ul><li>pretty simple</li><li>procedural, so the old folks are comfortable</li><li>Works nicely with either a Row Data Gateway (152) or&nbsp; Table Data Gateway (144)</li><li>Maps well to transaction boundaries</li></ul><h3>Disadvantages</h3><ul><li>duplication of code when multiple user requests require similar actions</li><li>Even if we break those into subroutines, we end up with a lot of unorganized routines</li></ul><h2>Domain Model</h2>An object model of the domain that incorporates both behavior and data<br><br>One class for each type of thing we store and one instance for each one of them.<br><ul><li>Standard OO Strategy:&nbsp; nouns are objects</li><li>Gives us all of the OO tools/patterns we are used to</li><li>We end up with a web of interconnected objects of the things that are meaningful to our system.</li><li>Objects mimic the data in the business and capture business rules (mingles data and process)</li><li>The
+challenge is in connecting that structure across the paradigm shift to
+a relational database.&nbsp; That is what the Data Mapper (165) is
+responsible for.</li></ul><h1>Table Module (125)</h1>A single instance that handles the business logic for all rows in a database table or view.<br><ul><li>Like Domain Model, puts data and behavior together</li><li>Matches the structure of the underlying DB (one class per DB table)</li><li>Every method requires a parameter that is the ID of the individual it should use</li><li>Usually uses Record Set (508) and gives you a method-based interface to manipulate it</li><li>Often have to use multiple Table Modules with multiple Record Sets to get something done.</li><li>A Table Module can be an instantiable class or just a bunch of static methods.</li></ul>How do we create it if it is instantiable?<br><ul><li>factory method based on a query or a view</li><li>If we need multiple data sets, use a Table Data Gateway (144) for each data set</li></ul>This
+works really nicely when the GUI environment is designed to use results
+of queries organized as Record Sets (508) like COM and .NET<br><br><h1>Comparison</h1>Transaction script is the simplest and good for systems with little domain logic<br><br>Table
+Module has more structure to the code than Transaction Script.&nbsp;
+Allows us to use some OO concepts, but one Table Module per DB table
+limits use of techniques like inheritance.<br><br>When domain logic is
+more complex, Domain Model allows us to leverage all OO concepts to
+keep domain logic well-structured, but requires mapping across the
+paradigm chasm to a relational DB<br><h1>Service Layer (133)</h1>Defines
+an application&#8217;s boundary with a layer of services that establishes a
+set of available operations and coordinates the application&#8217;s response
+in each operation.<br><br>Domain Model (116) and Table Module (125) do
+not explicitly code the service transactions that Transaction Scripts
+(110) make explicit.<br><ul><li>This makes it difficult to manage things like rollback on failure and commits</li><li>A Service Layer between the presentation layer and our domain logic can fix that</li><ul><li>Provides a clear API</li><li>Gives a clear place for transaction control</li><li>Gives a clear place for security checks</li></ul></ul>What goes in the Service Layer (133)?<br><ul><li>A thin facade delegating to lower level objects (in the Domain Model (116) or Table Module (125))</li><li>We can make a use case controller:&nbsp; behavior that is in more that one use case goes into the domain objects </li><ul><li>sometimes called &#8220;controller&#8221; entity style</li></ul><ul><li>hard to maintain because the line between the service layer and the domain objects is ambiguous as we add features.</li></ul></ul></body></html>

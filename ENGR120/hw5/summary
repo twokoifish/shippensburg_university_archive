@@ -1,0 +1,43 @@
+======---q4---=======
+Thu Mar 14 23:46:48 EDT 2019
+Checking format violation by a script...
+Compiling q4.c to q4
+Comparing using input q4.input.1 and answer q4.ans.1
+Diff output (empty line means correct):
+
+======---q6---=======
+Thu Mar 14 23:46:48 EDT 2019
+Checking format violation by a script...
+Compiling q6.c to q6
+Comparing using input q6.input.1 and answer q6.ans.1
+Diff output (empty line means correct):
+
+Comparing using input q6.input.2 and answer q6.ans.2
+Diff output (empty line means correct):
+
+Comparing using input q6.input.3 and answer q6.ans.3
+Diff output (empty line means correct):
+
+Comparing using input q6.input.4 and answer q6.ans.4
+Diff output (empty line means correct):
+
+Comparing using input q6.input.5 and answer q6.ans.5
+Diff output (empty line means correct):
+
+Comparing using input q6.input.6 and answer q6.ans.6
+Diff output (empty line means correct):
+
+======---q9---=======
+Thu Mar 14 23:46:49 EDT 2019
+Checking format violation by a script...
+Compiling q9.c to q9
+Comparing using input q9.input.1 and answer q9.ans.1
+Diff output (empty line means correct):
+
+======---q14---=======
+Thu Mar 14 23:46:49 EDT 2019
+Checking format violation by a script...
+Compiling q14.c to q14
+Comparing using input q14.input.1 and answer q14.ans.1
+Diff output (empty line means correct):
+

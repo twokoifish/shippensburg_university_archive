@@ -1,0 +1,11 @@
+.statistics, #statistics {
+    background-color: red;
+}
+
+.main, #main {
+    background-color: blue;
+}
+
+.settings, #settings {
+    background-color: green;
+}

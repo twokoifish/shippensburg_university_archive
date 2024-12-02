@@ -1,0 +1,1 @@
+memset(sentence, '\0', sizeof(&sentence));

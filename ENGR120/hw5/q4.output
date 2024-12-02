@@ -1,0 +1,21 @@
+Select the form that you would like to convert to slope-intercept form:
+1) Two-point form
+2) Point-slope
+=>Enter the x-y coordinates for first point: Enter the x-y coordinates for second point: 
+Two-point form
+    (-3.40 - 7.60)
+m = ----------------
+    (-5.20 - 2.30)
+
+Slope-intercept form
+y = 1.47x + 4.23
+Do another conversion (Y or N) => Select the form that you would like to convert to slope-intercept form:
+1) Two-point form
+2) Point-slope
+=>Enter the x-y coordinates of a point: Enter the slope: 
+Point-slope form
+y - 2.50 = 1.50(x - 1.50)
+
+Slope-intercept form
+y = 1.50x + 0.25
+Do another conversion (Y or N) => 

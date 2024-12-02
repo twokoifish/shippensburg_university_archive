@@ -1,0 +1,48 @@
+@import "../../core.css";
+
+.ms-Grid-col {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.ms-Nav {
+    overflow: hidden;
+    width: 27vh;
+    height: 100%;
+    font-size: 12px;
+    position: fixed;
+    text-align: center;
+    font-family: Poppins, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    .ms-Nav {
+        background-color: #22273D;
+        color: white;
+    }
+    .ms-Nav-linkText{
+        color: white;
+    }
+    .content {
+        background-color: #2A324F;
+
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .ms-Nav {
+        background-color: #f2f2f2;
+        color: black;
+    }
+    .content {
+        background-color: #ffffff;
+    }
+    .ms-Nav-linkText{
+        color: black;
+    }
+}
+
+
+
+
+

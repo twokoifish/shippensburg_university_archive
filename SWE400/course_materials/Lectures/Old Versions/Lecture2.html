@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>2Inheritance</title></head>
+<body>
+<h1>Inheritance vs. Relational DB</h1>
+The result of a paradigm chasm. &nbsp;When we think about how to
+store it, we worry about three things:<br>
+<ol>
+<li>How efficient is the storage? &nbsp; Are there wasted
+columns?</li>
+<li>If things are spread across tables, how to we connect them
+and what does it cost to retrieve them?</li>
+<li>If something changes in the inheritance hierarchy (add,
+delete, move up, move down), how hard is it to adjust the DB?
+&nbsp;Remember: we already have huge amounts of data in the
+production DB, so any change is going to require reconfiguration of an
+existing DB.</li>
+</ol>
+<br>
+<h2>Example</h2>
+<img style="height: 418px; width: 430px;" alt="Example Hierarchy" src="2-1Example.PNG"><br>
+<h2>Single Table Inheritance</h2>
+One table with columns for every attribute in every class<br><h3>For our example: &nbsp;</h3>
+LifeForm:<br>
+<ul>
+<li>id: long</li>
+<li>type: integer (0 = human, 1 = soldier, 2 = alien)</li>
+<li>healthPoints: integer</li>
+<li>experience: integer</li>
+<li>species: varchar(25)</li>
+<li>recoverRate: integer</li>
+<li>rank: integer</li>
+<li>weaponStrength: integer</li>
+<li>soldierTarget: integer (is a LifeForm id)</li>
+<li>alienTarget: integer (is a LifeForm id)<br>
+</li>
+</ul><h3>Our three questions:</h3><ol style="color: red;"><li>How efficient is the storage? &nbsp; Are there wasted
+columns?&nbsp;</li><li>If things are spread across tables, how to we connect them
+and what does it cost to retrieve them?</li><li>If something changes in the inheritance hierarchy (add,
+delete, move up, move down), how hard is it to adjust the DB?
+&nbsp;Remember: we already have huge amounts of data in the
+production DB, so any change is going to require reconfiguration of an
+existing DB.</li></ol><h3>
+Things to think about from reading</h3>
+"The single table may end up being too large, with many indexes and
+frequent locking, which may hurt performance.&nbsp; You can avoid
+this by having separate index tables that either list keys of rows that
+have a certain property or that copy a subset of fields relevant to an
+index"<br>
+<br>
+"You only have a single namespace for fields, so you have to be sure
+you don&#8217;t use the same name for different fields.&nbsp; Compound
+names with the name of the class as a prefix or suffix help here."<br><h2>
+Concrete Table Inheritance</h2>
+One table for each concrete class<br><h3>
+Substitution Principle</h3><span style="font-weight: bold;">
+Formally</span>: <br>Let phi(x) be a property provable and objects x of type
+T.&nbsp; Then phi(y) should be true for objects y of type S where S
+is a subtype of T.<br><br><span style="font-weight: bold;">Informally:</span><br>
+An instance of the subclass must be able to be substituted for any use
+of the superclass.<br>
+Subclasses must enforce an &#8220;is-a&#8221; relationship with the superclass.<br><span style="color: red;">
+What does this do to id numbers if each concrete class has a table?</span><br><h3>For our example: &nbsp;</h3>
+Human:<br><ul><li>
+humanOrSoldierId: Long</li><li>
+healthPoints: integer</li><li>
+experience: integer</li></ul>
+Alien:<br><ul><li>
+id: long</li><li>
+healthPoints: integer</li><li>
+species: varchar(25)</li><li>
+target: long (is a human or soldier ID)</li></ul>
+Soldier:<br><ul><li>
+humanOrSoldierId: Long</li><li>
+experience: integer</li><li>
+healthPoints: integer</li><li>
+rank: integer</li><li>
+weaponStrength: int</li><li>
+target: long (is an alien ID)</li></ul>
+<h3>Our three questions:</h3><ol style="color: red;"><li>How efficient is the storage? &nbsp; Are there wasted
+columns?&nbsp;</li><li>If things are spread across tables, how to we connect them
+and what does it cost to retrieve them?</li><li>If something changes in the inheritance hierarchy (add,
+delete, move up, move down), how hard is it to adjust the DB?
+&nbsp;Remember: we already have huge amounts of data in the
+production DB, so any change is going to require reconfiguration of an
+existing DB.</li></ol>
+<br><h3>
+Things to think about from reading</h3>
+&#8220;Each table is self-contained and has no irrelevant fields.&nbsp;
+As a result it makes good sense when used by other applications that
+aren&#8217;t using the objects.&#8221;<h4>
+When talking about keys:</h4>
+&#8220;A classic example of where you need this is if you have a collection
+of players and you&#8217;re using Identity Field (216) with table-wide
+keys.&nbsp; If keys can be duplicated between the tables that map
+the concrete classes, you&#8217;ll get multiple rows for a particular key
+value.&#8221;<br>
+<br>
+&#8220;You need a key allocation system that keeps track of key usage across
+tables; &#8220;<br>
+<br>
+&#8220;also, you can&#8217;t rely on the database&#8217;s primary key uniqueness
+mechanism.&#8221;<br>
+<br>
+&#8220;You can get around some of this by not having fields that are typed to
+the superclass, but obviously that compromises the object model&#8221;<br><br>
+&#8220;For compound keys you can use a special key object as your ID field
+for Identity Field (216). This key uses both the primary key of the
+table and the table name to determine uniqueness.&#8221;<br><h4>
+Talking about Figure 12.10 on p 295</h4>
+&#8220;To implement referential integrity you need a link table that contains
+foreign key columns for the charity functions and for the player.&#8221;<br><br>
+&#8220;The problem is that there&#8217;s no table for the player, so you can&#8217;t put
+together a referential integrity constraint for the foreign key field
+that takes either footballers or cricketers.&#8221;<br><br>
+&#8220;Your choice is to ignore referential integrity or must multiple link
+tables, one for each of the actual tables in the database.&#8221;<br>
+<br><h1>
+Class Table Inheritance</h1>
+One table for each class in the hierarchy<br>
+<br>
+Human:<br><ul><li>
+id: Long</li><li>
+experience: integer</li></ul>
+Alien:<br><ul><li>
+id: Long</li><li>
+species: varchar(25)</li><li>
+target: long (is a human or soldier ID)</li></ul>
+Soldier:<br><ul><li>
+id: Long</li><li>
+rank: integer</li><li>
+weaponStrength: int</li><li>
+target: long (is a LifeForm ID)</li></ul>
+LifeForm:<br><ul><li>
+id: Long</li><li>
+healthPoints: Integer</li></ul>
+<br><h3>Our three questions:</h3><ol style="color: red;"><li>How efficient is the storage? &nbsp; Are there wasted
+columns?&nbsp;</li><li>If things are spread across tables, how to we connect them
+and what does it cost to retrieve them?</li><li>If something changes in the inheritance hierarchy (add,
+delete, move up, move down), how hard is it to adjust the DB?
+&nbsp;Remember: we already have huge amounts of data in the
+production DB, so any change is going to require reconfiguration of an
+existing DB.</li></ol>
+<h3>Things to think about from reading</h3>
+&#8220;How to link the corresponding rows of the database tables&#8221;<br><br>
+&#8220;Use a common primary key value. Since the superclass table has a row
+for each row in the other tables, the primary keys are going to be
+unique across the tables.&#8221;<br><br>
+&#8220;An alternative is to let each table have its own primary keys and use
+foreign keys into the superclass table to tie the rows together.  This strategy would let the dbms enforce referential integrity.&#8221;<br>
+<br><h1>
+So, how do we pick?</h1>
+Tradeoffs are all about duplication of data, wasted space, and speed of
+access<br>
+So, we have to think about:<br><ul><li>
+What is required to access an object?</li><li>
+What is required to store an object?</li><li>
+How is the database affected by changes to the classes?</li><li>
+How is the database affected by changes to the structure of the
+hierarchy?</li><li>
+How is the database affected by moving instance variables up or down
+the hierarchy?</li></ul>
+<h2>
+Single Table Inheritance&nbsp;&nbsp; &nbsp;</h2><ul><li>
+One table for access and updates</li><li>
+That one table will be locked for updates - lock contention</li><li>
+Robust to changes in class design and hierarchy</li><li>
+Wasted space</li><li>
+Logic for figuring out which class something belongs to is extra</li></ul><h2>
+Concrete Table Inheritance</h2><ul><li>
+No joins on access if you know the class and only one table updated on writes</li><li>Searching for all members of a superclass requires a join with all descendent classes</li><li>
+No superclass lock contention</li><li>
+Brittle to changes in the classes</li><li>
+Change in a superclass can affect multiple tables</li><li>
+Robust to changes in hierarchy</li></ul><h2>
+Class Table Inheritance</h2><ul><li>
+Has a simple relation to the structure of the code</li><li>
+Is brittle to changes in the hierarchy, but not to changes in the
+classes</li><li>
+Requires joins on access which is a performance issue</li><li>
+Updates affect multiple tables</li><li>
+Lock contention on abstract superclass tables</li></ul><br><h1>
+</body></html>
